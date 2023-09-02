@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To do list</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+        .background {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back {
+            background-color: lightcoral;
+            width: 800px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            font-size: 30px;
+        }
+
+        .title {
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+
+        .addbtn {
+            margin-top: 15px;
+            margin-right: 20px;
+            font-size: 20px;
+            color: white;
+            background-color: transparent;
+            border: none;
+            text-decoration: underline;
+        }
+
+        .list1 {
+            background-color: lightblue;
+            margin: 15px 20px 15px 20px;
+            border-radius: 5px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .checkbx {
+            width: 15px;
+            height: 15px;
+            margin-left: 15px;
+        }
+
+        .input {
+            width: 500px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+        }
+
+        .editbtn {
+            margin-left: 70px;
+            border: none;
+        }
+
+        .delbtn {
+            margin-right: 15px;
+            border: none;
+        }
+    </style>
+    <script>
+        function add() {
+            let temp_html = `
+                    <div class="list1" id="todolist">
+                    <input class="checkbx" type="checkbox">
+                    <input class="input">
+                    <button class="editbtn">편집</button>
+                    <button class="delbtn" onclick="remove()">삭제</button>
+                </div>`;
+            $('#dolist').append(temp_html);
+        }
+
+        function remove() {
+            $('#todolist').remove();
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="background">
+        <div class=back>
+            <div class="header">
+                <div class="title">
+                    To do
+                </div>
+                <button class="addbtn" onclick="add()">
+                    새로운 할 일 추가하기
+                </button>
+            </div>
+
+            <div class="list" id="dolist">
+                <div class="list1" id="todolist">
+                    <input class="checkbx" type="checkbox">
+                    <input class="input">
+                    <button class="editbtn">편집</button>
+                    <button class="delbtn" onclick="remove()">삭제</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
